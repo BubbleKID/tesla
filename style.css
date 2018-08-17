@@ -1,0 +1,58 @@
+.section-title{
+    font-family: Gotham Light,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 40px;
+}
+[class*='battery-badge--']{
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+.range-hero{
+    background-image: url(images/models_rangemodule_hero@2x.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.hero-wheels-container{
+    width:555px;
+    height:247px;
+    position: relative;
+    margin: auto;
+}
+.wheels-nineteen {
+    background-image: url(images/19-wheel@2x.png);
+}
+.wheels-front{
+    left:53px;
+    height:80px;
+    width:80px;   
+    background-size: cover;
+    position: absolute; 
+    bottom: 0;
+}
+.wheels-rear{
+    right:72px;
+    height:80px;
+    width:80px;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+
+
+.batterytype-ranges{
+    display: flex;
+}
+.battery-badge--75d{
+    background-image: url(images/75d.svg);
+}
+.battery-badge--100d{
+    background-image: url(images/100d.svg);
+}
+.battery-badge--p100d{
+    background-image: url(images/P100d.svg);
+}
