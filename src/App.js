@@ -4,32 +4,40 @@ import './App.css';
 
 class App extends Component {
   render() {
-    return (
-      
-      <body>
+    return (    
+      <div>
           <div>
-              <h2 class="section-title">Range per Change</h2>
-              <div class="range-hero">
-                  <div class="hero-wheels-container"> 
-                      <div class="wheels-front wheels-nineteen"></div>
-                      <div class="wheels-rear wheels-nineteen"></div>
+              <h2 className="section-title">Range per Change</h2>
+              <div className="range-hero">
+                  <div className="hero-wheels-container"> 
+                      <div className="wheels-front wheels-nineteen"></div>
+                      <div className="wheels-rear wheels-nineteen"></div>
                   </div>    
               </div>
-              <div class="batterytype-ranges">
-                  <div>
-                      <h1 class="battery-badge--75d">75D</h1>
-                      <span>456km</span>
+              <div className="batterytype-ranges">
+                  <div className="battery-option battery-option--75D" >
+                      <span>
+                        <h1 className="battery-badge--75d">75D</h1>
+                      </span>                        
+                      <span className="battery-range-content">456</span>
+                      <span>KM</span>
                   </div>
-                  <div>
-                      <h1 class="battery-badge--100d">100D</h1> 
-                      <span>582km</span>
+                  <div className="battery-option battery-option--90D">
+                      <span>
+                        <h1 className="battery-badge--100d">100D</h1> 
+                      </span>
+                      <span className="battery-range-content">582</span>
+                      <span>KM</span>
                   </div>
-                  <div>
-                      <h1 class="battery-badge--p100d">P100D</h1>
-                      <span>547km</span>
+                  <div className="battery-option battery-option--100D">
+                      <span >
+                        <h1 className="battery-badge--p100d">P100D</h1>
+                      </span>
+                      <span className="battery-range-content">547</span>
+                      <span>KM</span>
                   </div> 
               </div>    
-              <div class="range-controlscontainer">
+              <div className="range-controlscontainer">
                   <div>
                       <span>Speed</span>
                       <p>100KMH</p>
@@ -64,18 +72,13 @@ class App extends Component {
                   </div>
               </div>
           </div>
-  
-  
-  
-  
-  
           <div>
               The actual amount of range that you experience will vary based on your particular use conditions. 
               Your vehicle range is also dependent on other conditions, such as vehicle configuration, battery age and condition,
               driving style and operating, environmental and climate conditions. See how some of these particular use conditions 
               may affect your range in our simulation model.
           </div>
-      </body>
+      </div>
   
     );
   }
