@@ -54,6 +54,8 @@
   display: flex;    
   align-items: center;    
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .battery-option {
@@ -76,6 +78,19 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 100;
+}
+
+.battery-range-units{
+  font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color:#008dff;
+  font-size: 15px;
+  font-style: normal;
+  margin-top: -30px;
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  font-weight: normal;
+  vertical-align: super;
 }
 
 

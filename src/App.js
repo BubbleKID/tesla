@@ -20,24 +20,24 @@ class App extends Component {
                         <h1 className="battery-badge--75d">75D</h1>
                       </span>                        
                       <span className="battery-range-content">456</span>
-                      <span>KM</span>
+                      <span className="battery-range-units" >KM</span>
                   </div>
                   <div className="battery-option battery-option--90D">
                       <span>
                         <h1 className="battery-badge--100d">100D</h1> 
                       </span>
                       <span className="battery-range-content">582</span>
-                      <span>KM</span>
+                      <span className="battery-range-units">KM</span>
                   </div>
                   <div className="battery-option battery-option--100D">
                       <span >
                         <h1 className="battery-badge--p100d">P100D</h1>
                       </span>
                       <span className="battery-range-content">547</span>
-                      <span>KM</span>
+                      <span className="battery-range-units">KM</span>
                   </div> 
               </div>    
-              <div className="range-controlscontainer">
+              <div className="range-controls container">
                   <div>
                       <span>Speed</span>
                       <p>100KMH</p>
