@@ -22,6 +22,9 @@
   position: relative;
   margin: auto;
 }
+
+@keyframes infinite-spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
 .wheels-nineteen {
   background-image: url(./images/19-wheel@2x.png);
   animation:infinite-spinning 250ms steps(6) infinite;
@@ -102,4 +105,209 @@
   background-position: center;
 }
 
-@keyframes infinite-spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.range-controls container{
+  padding-bottom: 7px;
+}
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1060px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    width: auto;
+}
+
+
+.range-controls--speed {
+  padding-right: 3.92157%;
+  width: 22.54902%;
+  display: block;
+  float: left;
+ 
+}
+.spinner-container{
+  margin-top: 10px;
+  width: 190px;
+  height: 65px;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  float: left;
+  overflow: hidden;
+}
+
+.spinner-controls{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.spinner-controls--decrease{
+  border-top: 1px solid #ccc;
+  background-image: url(./images/icon-arrow-decrease-on.svg);
+}
+
+.spinner-controls [class*='spinner-controls']{
+  width: 30px;
+  cursor: pointer;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  text-indent: -9999px;
+  display: block;
+}
+
+.spinner-controls--increase{
+  background-image: url(./images/icon-arrow-increase-on.svg);
+}
+
+
+
+.section-subtitle{
+  font-family: Gotham Light,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #333;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: left;
+}
+
+.controls-data{
+  font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding: 18px 10px;
+  box-shadow: 0 0 0 transparent;
+  margin: 0;
+  position: relative;
+  display: block;
+  color: #000;
+  font-weight: 200;
+  border: 0;
+  line-height: 1;
+  text-align: center;
+  overflow: hidden;
+}
+
+.spinner-number{
+  font-size: 25px;
+  line-height: 25px;
+  display: block;
+  float: left;
+  text-align: right;
+}
+
+.spinner-unit{
+  font-size: 15px;
+  line-height: 15px;
+  top: 9px;
+  font-weight: 400;
+  position: relative;
+  float: left;
+  display: block;
+}
+
+.range-controls--climate {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding-left: 3.92157%;
+  padding-right: 3.92157%;
+  position: relative;
+  width: 38.72549%;
+  display: block;
+  float: left;
+  
+}
+
+.climate-controller{
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  height: 100px;
+  position: absolute;
+  right: 8%;
+  top: 10px;
+  width: 25.31646%;
+}
+
+.climate-off{
+  background-image: url(./images/icon-button-off.png);
+}
+.range-controls--climate .controls-data{
+  padding-left: 2.53165%;
+  padding-right: 2.53165%;
+}
+
+
+
+.climate-controller .controls-text {
+  user-select: none;
+  font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  display: block;
+  font-size: 7px;
+  margin: 0;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+  color: #666;
+}
+.icon-airconditioning {
+  background-image: url(./images/icon-heat-off.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 22px;
+  margin: auto;
+  width: 22px;
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+.range-controls--wheels {
+  padding-left: 3.92157%;
+  width: 38.72549%;
+  display: block;
+  float: left;
+}
+
+.range-controls--wheels [class*='wheelsize-'] {
+  user-select: none;
+  font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  background-color: #f7f7f7;
+  background-image: url(/tesla_theme/assets/img/range-calculator/icon-19-wheel.svg?20160412);
+  background-position: 24.21053% 9px;
+  background-repeat: no-repeat;
+  background-size: 44px;
+  border: 1px solid #ccc;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  /* float: left; */
+  font-size: 15px;
+  height: 65px;
+  line-height: 1.6;
+  max-width: 190px;
+  padding: 18px 4.13793% 18px 17.01149%;
+  text-align: center;
+  width: 49%;
+}
