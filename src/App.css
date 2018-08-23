@@ -1,3 +1,6 @@
+.main{
+  box-sizing: border-box;
+}
 .section-title{
   /*font-family: Gotham Light,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;*/
   font-weight: 300;
@@ -124,9 +127,6 @@
 .range-controls--speed {
   padding-right: 3.92157%;
   width: 22.54902%;
-  display: block;
-  float: left;
- 
 }
 .spinner-container{
   margin-top: 10px;
@@ -219,9 +219,6 @@
   padding-right: 3.92157%;
   position: relative;
   width: 38.72549%;
-  display: block;
-  float: left;
-  
 }
 
 .climate-controller{
@@ -285,8 +282,16 @@
 .range-controls--wheels {
   padding-left: 3.92157%;
   width: 38.72549%;
+}
+
+.range-controls--speed, .range-controls--climate, .range-controls--wheels {
   display: block;
   float: left;
+}
+
+.range-controls--wheels .controls-wheelsize {
+  margin-top: 10px;
+  
 }
 
 .range-controls--wheels [class*='wheelsize-'] {
@@ -294,7 +299,7 @@
   font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: normal;
   background-color: #f7f7f7;
-  background-image: url(/tesla_theme/assets/img/range-calculator/icon-19-wheel.svg?20160412);
+  background-image: url(./images/icon-19-wheel.svg);
   background-position: 24.21053% 9px;
   background-repeat: no-repeat;
   background-size: 44px;
@@ -302,7 +307,7 @@
   color: #000;
   cursor: pointer;
   display: inline-block;
-  /* float: left; */
+   float: left; 
   font-size: 15px;
   height: 65px;
   line-height: 1.6;
@@ -310,4 +315,42 @@
   padding: 18px 4.13793% 18px 17.01149%;
   text-align: center;
   width: 49%;
+}
+
+
+.range-controls--wheels .selected {
+  background-position: 23.68421% 8px;
+  border: 2px solid #39f;
+  padding: 17px 3.90805% 17px 16.78161%;
+}
+
+
+.range-controls--wheels [class*='wheelsize-'] + [class*='wheelsize-'] {
+  background-image: url(./images/icon-19-wheel.svg);
+  float: right;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.section-disclaimer {
+  margin-bottom: 65px;
+  padding-top: 20px;
+}
+
+p {
+  margin: 22px 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: #666;
+  font-family: "HeiS ASC Simplified Chinese","HeiS ASC Simplified Chinese_n5","HeiT ASC Traditional Chinese","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.section-range-calculator {
+  padding-top: 50px;
+}
+section {
+  clear: both;
+  display: block;
 }
