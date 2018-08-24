@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import BatteryRange from './components/BatteryRange';
 
 class App extends Component {
+
+
   render() {
     return ( 
         <div className="main">
@@ -14,29 +17,7 @@ class App extends Component {
                         <div className="wheels-rear wheels-nineteen"></div>
                     </div>    
                 </div>
-                <div className="batterytype-ranges">
-                    <div className="battery-option battery-option--75D" >
-                        <span>
-                            <h1 className="battery-badge--75d">75D</h1>
-                        </span>                        
-                        <span className="battery-range-content">456</span>
-                        <span className="battery-range-units" >KM</span>
-                    </div>
-                    <div className="battery-option battery-option--90D">
-                        <span>
-                            <h1 className="battery-badge--100d">100D</h1> 
-                        </span>
-                        <span className="battery-range-content">582</span>
-                        <span className="battery-range-units">KM</span>
-                    </div>
-                    <div className="battery-option battery-option--100D">
-                        <span >
-                            <h1 className="battery-badge--p100d">P100D</h1>
-                        </span>
-                        <span className="battery-range-content">547</span>
-                        <span className="battery-range-units">KM</span>
-                    </div> 
-                </div>    
+                <BatteryRange />
                 <div className="range-controls container">
                     <div className="range-controls--speed">
                         <h2 className="section-subtitle">Speed</h2>
@@ -70,9 +51,7 @@ class App extends Component {
                             <input type="radio" className="sr-only controls-data"></input>
                         </label>                    
                         </div>
-                    </div>
-                    
-                    
+                    </div>          
                     <div className="range-controls--wheels">
                         <h2 className="section-subtitle">Wheels</h2>
                         <div className="controls-wheelsize">

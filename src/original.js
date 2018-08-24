@@ -366,7 +366,7 @@
                 });
             });
 
-
+                ///tesla_theme/js/models/v1.0/data/imperial75Miles.json
             // ***********************
             // grab the range data JSON files and set into local obj
             function initializeRangeData() {
