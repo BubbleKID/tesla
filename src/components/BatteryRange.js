@@ -13,7 +13,7 @@ class BatteryRange extends Component {
         // var city = 331;
 
         console.log(model_70d);
-        console.log(model_70d.filter(status=>status.temp ==-10));
+        console.log(model_70d.filter(status=>status.temp == -10).filter(status=>status.wheelsize === 19));
       return (
 
         <div className="batterytype-ranges">
