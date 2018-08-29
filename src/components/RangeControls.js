@@ -6,7 +6,8 @@ class RangeControls extends Component {
         this.state = {
             speedIndex : 0,
             tempIndex : 0,
-            ac: "off"    
+            ac: "off" ,
+            selectedWheel: 19 
         };
     }
 
@@ -27,8 +28,7 @@ class RangeControls extends Component {
     }   
     
     changeTempIncrease() {
-        if (this.state.tempIndex < 5 ){       
-            
+        if (this.state.tempIndex < 5 ){           
             return this.setState({
                 tempIndex: this.state.tempIndex+1
             })
@@ -54,13 +54,10 @@ class RangeControls extends Component {
     }
     acSwitch(ev){
         ev.stopPropagation();
-
-        if(this.state.ac==="off")
-        {
+        if(this.state.ac==="off"){
             return this.setState({
                 ac:"on"
-            })
-            
+            })    
         }
         else{
             return this.setState({
@@ -73,6 +70,25 @@ class RangeControls extends Component {
 
     }
     
+    radioChange (ev) {
+        ev.stopPropagation();
+        if(ev.currentTarget.children[0].value === "19" )
+        {
+            this.setState({
+                selectedWheel: 19
+            });
+            document.querySelector(".wheelsize-nineteen").className="wheelsize-nineteen selected";  
+            document.querySelector(".wheelsize-twentyone").className="wheelsize-twentyone"; 
+        }
+        else if(ev.currentTarget.children[0].value === "21")
+        {
+            this.setState({
+                selectedWheel: 21
+            });
+            document.querySelector(".wheelsize-twentyone").className="wheelsize-twentyone selected"; 
+            document.querySelector(".wheelsize-nineteen").className="wheelsize-nineteen";  
+        }
+    }
 
     render() {
       return (
@@ -99,7 +115,7 @@ class RangeControls extends Component {
                 </p>
                 <p className="spinner-controls">
                     <button className="spinner-controls--increase" onClick={() => this.changeTempIncrease()} >Up</button>
-                    <button className="spinner-controls--decrease" onClick={() => this.changeTempDecrease()}>Down</button>
+                    <button className="spinner-controls--decrease" onClick={() => this.changeTempDecrease()} >Down</button>
                 </p>
                 </div>
                 <div className="climate-controller climate-off climate-heat" onClick={ev => this.acSwitch(ev)} >                     
@@ -113,13 +129,14 @@ class RangeControls extends Component {
             <div className="range-controls--wheels">
                 <h2 className="section-subtitle">Wheels</h2>
                 <div className="controls-wheelsize">
-                    <label className="wheelsize-nineteen selected">
-                    <input type="radio" className="sr-only controls-data" name="group1" value="19" checked=""></input>
-                        19
+                    <label className="wheelsize-nineteen" onClick={ev => this.radioChange(ev)}>
+                        <input type="radio" className="sr-only controls-data" name="group1" value="19" ></input>
+                            19
                     </label>
-                    <label className="wheelsize-twentyone">
-                    <input type="radio" className="sr-only controls-data" name="group1" value="21"></input>
-                        21
+
+                    <label className="wheelsize-twentyone" onClick={ev => this.radioChange(ev)}>
+                        <input type="radio" className="sr-only controls-data" name="group1" value="21" ></input>
+                            21
                     </label>
                 </div>
             </div>

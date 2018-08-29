@@ -30,7 +30,9 @@ class BatteryRange extends Component {
                     if(status.mph === 70)
                     {              
                         range =  status.miles;
+                       
                     }
+                    return range;
                 }
         ));
         return range;
