@@ -234,15 +234,31 @@
   width: 25.31646%;
 }
 
-.climate-off{
-  background-image: url(./images/icon-button-off.png);
-}
+
 .range-controls--climate .controls-data{
   padding-left: 2.53165%;
   padding-right: 2.53165%;
 }
 
+.climate-controller label {
+  cursor: pointer;
+}
 
+.climate-ac{
+  background-image: url(./images/icon-button-ac.png);
+}
+
+.climate-off{
+  background-image: url(./images/icon-button-off.png);
+}
+
+.climate-on .controls-text {
+  color: #fff;
+}
+
+.climate-off .controls-text {
+  color: #666;
+}
 
 .climate-controller .controls-text {
   user-select: none;
@@ -256,10 +272,20 @@
   text-align: center;
   text-transform: uppercase;
   z-index: 1;
-  color: #666;
+ 
 }
+
+.climate-on.climate-ac .icon-airconditioning {
+  background-image: url(./images/icon-ac-on.svg);
+}
+
+.climate-off.climate-ac .icon-airconditioning {
+  background-image: url(./images/icon-ac-off.svg);
+}
+
+
 .icon-airconditioning {
-  background-image: url(./images/icon-heat-off.svg);
+  
   background-position: center;
   background-repeat: no-repeat;
   display: block;

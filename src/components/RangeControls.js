@@ -53,16 +53,25 @@ class RangeControls extends Component {
         return tempRange[this.state.tempIndex];
     }
     acSwitch(ev){
+        ev.preventDefault();
         ev.stopPropagation();
+        //debugger;
         if(this.state.ac==="off"){
+            //console.log(this.state.ac); 
+            document.querySelector(".climate-ac").className = "climate-controller climate-on climate-ac";  
+            ev.currentTarget.children[0].children[0].innerText = "AC ON";
             return this.setState({
                 ac:"on"
-            })    
+            });  
+            
         }
         else{
+            //console.log(this.state.ac); 
+            ev.currentTarget.children[0].children[0].innerText = "AC OFF";
+            document.querySelector(".climate-ac").className = "climate-controller climate-off climate-ac";  
             return this.setState({
                 ac:"off"
-            })
+            });
         }
     }
 
@@ -118,9 +127,9 @@ class RangeControls extends Component {
                     <button className="spinner-controls--decrease" onClick={() => this.changeTempDecrease()} >Down</button>
                 </p>
                 </div>
-                <div className="climate-controller climate-off climate-heat" onClick={ev => this.acSwitch(ev)} >                     
+                <div className="climate-controller climate-off climate-ac" onClick={ev => this.acSwitch(ev)} >                     
                     <label >
-                        <p className="controls-text">Heat OFF</p>
+                        <p className="controls-text">AC OFF</p>
                         <i className="icon-airconditioning"></i>
                         <input type="radio" className="sr-only controls-data" ></input>
                     </label>                    
