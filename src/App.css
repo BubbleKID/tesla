@@ -248,6 +248,11 @@
   background-image: url(./images/icon-button-ac.png);
 }
 
+
+.climate-heat{
+  background-image: url(./images/icon-button-heat.png);
+}
+
 .climate-off{
   background-image: url(./images/icon-button-off.png);
 }
@@ -279,9 +284,20 @@
   background-image: url(./images/icon-ac-on.svg);
 }
 
+
+.climate-on.climate-heat .icon-airconditioning {
+  background-image: url(./images/icon-heat-on.svg);
+}
+
 .climate-off.climate-ac .icon-airconditioning {
   background-image: url(./images/icon-ac-off.svg);
 }
+
+
+.climate-off.climate-heat .icon-airconditioning {
+  background-image: url(./images/icon-heat-off.svg);
+}
+
 
 
 .icon-airconditioning {

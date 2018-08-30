@@ -5,7 +5,7 @@ class RangeControls extends Component {
         super(props);
         this.state = {
             speedIndex : 0,
-            tempIndex : 0,
+            tempIndex : 4,
             ac: "off" ,
             selectedWheel: 19 
         };
@@ -55,23 +55,21 @@ class RangeControls extends Component {
     acSwitch(ev){
         ev.preventDefault();
         ev.stopPropagation();
+        var acController = document.querySelector(".climate-controller");
+        var activate, acText = "";
+        this.state.tempIndex > 2 ? activate="climate-ac"  : activate="climate-heat";
+        this.state.tempIndex > 2 ? acText="AC"  : acText ="HEAT";
+        acController.classList.remove("climate-on","climate-off","climate-ac","climate-heat");
         //debugger;
         if(this.state.ac==="off"){
-            //console.log(this.state.ac); 
-            document.querySelector(".climate-ac").className = "climate-controller climate-on climate-ac";  
-            ev.currentTarget.children[0].children[0].innerText = "AC ON";
-            return this.setState({
-                ac:"on"
-            });  
-            
+            acController.classList.add("climate-on",activate);
+            ev.currentTarget.children[0].children[0].innerText = acText + " ON";  
+            return this.setState({ac:"on"});  
         }
-        else{
-            //console.log(this.state.ac); 
-            ev.currentTarget.children[0].children[0].innerText = "AC OFF";
-            document.querySelector(".climate-ac").className = "climate-controller climate-off climate-ac";  
-            return this.setState({
-                ac:"off"
-            });
+        else{    
+            acController.classList.add("climate-off",activate);      
+            ev.currentTarget.children[0].children[0].innerText = acText + " OFF";  
+            return this.setState({ac:"off"});  
         }
     }
 
