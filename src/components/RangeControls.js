@@ -7,7 +7,7 @@ class RangeControls extends Component {
             speedIndex : 0,
             tempIndex : 4,
             ac: "off" ,
-            selectedWheel: 19 
+            selectedWheel: 19            
         };
     }
 
@@ -29,17 +29,22 @@ class RangeControls extends Component {
     
     changeTempIncrease() {
         if (this.state.tempIndex < 5 ){           
-            return this.setState({
+            this.setState({
                 tempIndex: this.state.tempIndex+1
+                
             })
+            this.showRange();
+            return;
         }      
     }  
 
     changeTempDecrease() {
         if (this.state.tempIndex > 0 ){       
-            return this.setState({
+            this.setState({
                 tempIndex: this.state.tempIndex-1
-            })
+            });
+            this.showRange();
+            return;
         }          
     } 
 
@@ -96,6 +101,9 @@ class RangeControls extends Component {
             document.querySelector(".wheelsize-nineteen").className="wheelsize-nineteen";  
         }
     }
+
+
+
 
     render() {
       return (

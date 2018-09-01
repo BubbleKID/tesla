@@ -16,10 +16,9 @@ class BatteryRange extends Component {
         };
     }
 
-    getStatus = (mph,temp,ac,wheels,model) => {
-            
+    getStatus = (mph,temp,ac,wheels,model) => {        
         var range;
-        var currentStatus = model.filter(status=>status.temp === -10)
+        var currentStatus = model.filter(status=>status.temp === temp)
         .filter(status=>status.wheelsize === 19)
         .filter(status=>status.ac === "off")
         .filter(status=>status.windows === "up")
@@ -27,10 +26,8 @@ class BatteryRange extends Component {
         currentStatus.filter(
             status=>status.hwy.filter(
                 function(status){
-                    if(status.mph === 70)
-                    {              
+                    if(status.mph === mph){              
                         range =  status.miles;
-                       
                     }
                     return range;
                 }
@@ -41,9 +38,9 @@ class BatteryRange extends Component {
    
     render() {
 
-       var  range_75d = this.getStatus(70,10,"off",19,model_75d);
-       var  range_100d = this.getStatus(70,10,"off",19,model_100d);
-       var  range_p100d = this.getStatus(70,10,"off",19,model_p100d);
+       var  range_75d = this.getStatus(70,20,"off",19,model_75d);
+       var  range_100d = this.getStatus(70,20,"off",19,model_100d);
+       var  range_p100d = this.getStatus(70,20,"off",19,model_p100d);
 
         // var speedRange = [70,80,90,100,110,120];
         // var tempRange = [-10,0,10,20,30,40];
@@ -55,7 +52,7 @@ class BatteryRange extends Component {
         // var lights = "off";
         // var windows = "up";
         // var city = 331;
-        //console.log(model_70d);
+        console.log(this.getStatus(70,10,"off",19,model_75d));
         //console.log( );
       return (
         <div className="batterytype-ranges">
@@ -63,7 +60,7 @@ class BatteryRange extends Component {
                 <span>
                     <h1 className="battery-badge--75d">75D</h1>
                 </span>                        
-                <span className="battery-range-content">{range_75d  }</span>
+                <span className="battery-range-content">{  this.getStatus(70,20,"off",19,model_75d)  }</span>
                 <span className="battery-range-units" >KM</span>
             </div>
             <div className="battery-option battery-option--90D">
