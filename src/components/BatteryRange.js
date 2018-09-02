@@ -6,21 +6,15 @@ import model_p100d from '../data/metricP100DMiles.json';
 
 class BatteryRange extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            speedIndex : 1,
-            tempIndex : 2,
-            wheelIndex : 1,
-            ac :"on",
-            model : "model_75d"            
-        };
+        super(props);   
+        //this.displayWheelSize = 19;
     }
 
-    getStatus = (mph,temp,ac,wheels,model) => {        
+    getStatus = (mph,temp,ac,wheels,model) => {     
         var range;
         var currentStatus = model.filter(status=>status.temp === temp)
-        .filter(status=>status.wheelsize === 19)
-        .filter(status=>status.ac === "off")
+        .filter(status=>status.wheelsize === wheels)
+        .filter(status=>status.ac === ac)
         .filter(status=>status.windows === "up")
         .filter(status=>status.lights === "off");
         currentStatus.filter(
@@ -35,50 +29,38 @@ class BatteryRange extends Component {
         return range;
     }
 
-   
     render() {
+        
+        var rangeModel_75d = this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_75d);
+        var rangemodel_100d = this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_100d);
+        var rangemodel_p100d = this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_p100d);
 
-       var  range_75d = this.getStatus(70,20,"off",19,model_75d);
-       var  range_100d = this.getStatus(70,20,"off",19,model_100d);
-       var  range_p100d = this.getStatus(70,20,"off",19,model_p100d);
-
-        // var speedRange = [70,80,90,100,110,120];
-        // var tempRange = [-10,0,10,20,30,40];
-        // var wheelRange = [19,21];
-        // var speedIndex = 1;
-        // var tempIndex = 2;
-        // var wheelIndex = 1;
-        // var ac = "on";
-        // var lights = "off";
-        // var windows = "up";
-        // var city = 331;
-        console.log(this.getStatus(70,10,"off",19,model_75d));
-        //console.log( );
-      return (
-        <div className="batterytype-ranges">
-            <div className="battery-option battery-option--75D" >
-                <span>
-                    <h1 className="battery-badge--75d">75D</h1>
-                </span>                        
-                <span className="battery-range-content">{  this.getStatus(70,20,"off",19,model_75d)  }</span>
-                <span className="battery-range-units" >KM</span>
-            </div>
-            <div className="battery-option battery-option--90D">
-                <span>
-                    <h1 className="battery-badge--100d">100D</h1> 
-                </span>
-                <span className="battery-range-content">{ range_100d }</span>
-                <span className="battery-range-units">KM</span>
-            </div>
-            <div className="battery-option battery-option--100D">
-                <span >
-                    <h1 className="battery-badge--p100d">P100D</h1>
-                </span>
-                <span className="battery-range-content">{ range_p100d }</span>
-                <span className="battery-range-units">KM</span>
-            </div> 
-        </div>    
-      );
+        console.log( this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_75d) );
+        return (
+            <div className="batterytype-ranges">
+                <div className="battery-option battery-option--75D" >
+                    <span>
+                        <h1 className="battery-badge--75d">75D</h1>
+                    </span>                        
+                    <span className="battery-range-content">{ rangeModel_75d }</span>
+                    <span className="battery-range-units" >KM</span>
+                </div>
+                <div className="battery-option battery-option--90D">
+                    <span>
+                        <h1 className="battery-badge--100d">100D</h1> 
+                    </span>
+                    <span className="battery-range-content">{  rangemodel_100d  }</span>
+                    <span className="battery-range-units">KM</span>
+                </div>
+                <div className="battery-option battery-option--100D">
+                    <span >
+                        <h1 className="battery-badge--p100d">P100D</h1>
+                    </span>
+                    <span className="battery-range-content">{  rangemodel_p100d  }</span>
+                    <span className="battery-range-units">KM</span>
+                </div> 
+            </div>    
+         );
     }
 }
 

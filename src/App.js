@@ -1,11 +1,42 @@
 import React, { Component } from 'react';
 import './App.css';
 import BatteryRange from './components/BatteryRange';
-import RangeControls from './components/RangeControls';
+
+import SpeedControl from './components/SpeedControl';
+import TemperatureControl from './components/TemperatureControl';
+import WheelSizeControl from './components/WheelSizeControl';
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {          
+            ac: "off" ,
+            selectedWheel: 19,
+            displaySpeed : 70,
+            displayTemp : 10,
+            displayWheelSize : 19         
+        };
+    }  
+
+    setSpeed(displaySpeed){
+        this.setState({displaySpeed});      
+    }
+
+    setTemp(displayTemp){
+        this.setState({displayTemp});       
+    }
+
+    setAC(ac){
+        this.setState({ac});       
+    }
+
+    setWheelSize(displayWheelSize){
+        this.setState({displayWheelSize});       
+    }
 
   render() {
+    
+    //console.log("speed: " + this.state.displaySpeed);
     return ( 
         <div className="main">
             <section className="section-container section-range-calculator hide-on-mobile">
@@ -17,8 +48,19 @@ class App extends Component {
                         <div className="wheels-rear wheels-nineteen"></div>
                     </div>    
                 </div>
-                <BatteryRange />
-                <RangeControls />
+                <BatteryRange 
+                    speed={this.state.displaySpeed}  
+                    wheelsize={this.state.displayWheelSize} 
+                    temp={this.state.displayTemp} 
+                    ac={this.state.ac}
+                />
+                    <div className="range-controls container">
+                        <SpeedControl  setSpeed = { displaySpeed =>this.setSpeed(displaySpeed) }/>
+                        <TemperatureControl setTemp = { displayTemp =>this.setTemp(displayTemp) }  setAC = { ac =>this.setAC(ac) } />
+                        <WheelSizeControl setWheelSize = { displayWheelSize =>this.setWheelSize(displayWheelSize) }  />
+                    </div>
+          
+
             </div>  
             </section>
 
