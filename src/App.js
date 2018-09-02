@@ -10,7 +10,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {          
-            ac: "off" ,
+            ac: "off",
             selectedWheel: 19,
             displaySpeed : 70,
             displayTemp : 10,

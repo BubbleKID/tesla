@@ -11,12 +11,12 @@ class WheelSizeControl extends Component {
         if(ev.currentTarget.children[0].value === "19" ){
             document.querySelector(".wheelsize-nineteen").className="wheelsize-nineteen selected";  
             document.querySelector(".wheelsize-twentyone").className="wheelsize-twentyone"; 
-            this.props.setWheelSize(this.displayWheelSize); 
+            this.props.setWheelSize( 19 ); 
         }
         else if(ev.currentTarget.children[0].value === "21"){
             document.querySelector(".wheelsize-twentyone").className="wheelsize-twentyone selected"; 
             document.querySelector(".wheelsize-nineteen").className="wheelsize-nineteen"; 
-            this.props.setWheelSize(this.displayWheelSize); 
+            this.props.setWheelSize( 21 ); 
         }
     }
 

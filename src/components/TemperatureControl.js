@@ -7,7 +7,25 @@ class TemperatureControl extends Component {
         this.tempIndex = 4;  
         this.tempRange = [-10,0,10,20,30,40];
         this.displayTemp = this.tempRange[this.tempIndex],
-        this.ac = "off"
+        this.ac = "off";
+    }
+    
+    isAC() { 
+        var acController = document.querySelector(".climate-controller");
+        var activate, acText = "";
+        this.tempIndex > 2 ? activate="climate-ac"  : activate="climate-heat";
+        this.tempIndex > 2 ? acText="AC" : acText ="HEAT";
+        acController.classList.remove("climate-ac","climate-heat");
+        if(this.ac === "off"){
+            acController.classList.add(activate);
+            document.querySelector(".climate-controller p").innerText = acText + " OFF";  
+            return;
+        }
+        else{    
+            acController.classList.add(activate);      
+            document.querySelector(".climate-controller p").innerText = acText + " ON"; 
+            return;
+        }
     }
 
     changeTempIncrease() {       
@@ -15,17 +33,18 @@ class TemperatureControl extends Component {
             this.tempIndex = this.tempIndex + 1;  
             this.displayTemp = this.tempRange[this.tempIndex];  
             this.props.setTemp(this.displayTemp);
-            document.querySelector('.range-controls--climate .spinner-number').innerHTML= this.displayTemp;                 
+            document.querySelector('.range-controls--climate .spinner-number').innerHTML = this.displayTemp; 
+            this.isAC();     
         }   
     }  
 
     changeTempDecrease() {
-        //console.log(this.tempIndex);
         if (this.tempIndex > 0 ){              
             this.tempIndex = this.tempIndex - 1;  
             this.displayTemp = this.tempRange[this.tempIndex];  
-            this.props.setTemp(this.displayTemp);
-            document.querySelector('.range-controls--climate .spinner-number').innerHTML= this.displayTemp;          
+            this.props.setTemp(this.displayTemp);           
+            document.querySelector('.range-controls--climate .spinner-number').innerHTML = this.displayTemp; 
+            this.isAC();       
         }       
     }   
 
@@ -38,18 +57,18 @@ class TemperatureControl extends Component {
         this.tempIndex > 2 ? acText="AC" : acText ="HEAT";
         acController.classList.remove("climate-on","climate-off","climate-ac","climate-heat");
         //debugger;
-        if(this.ac==="off"){
+        if(this.ac === "off"){
             acController.classList.add("climate-on",activate);
             ev.currentTarget.children[0].children[0].innerText = acText + " ON";  
             this.props.setAC(this.ac);
-            this.ac ="on"; 
+            this.ac = "on"; 
             return;
         }
         else{    
             acController.classList.add("climate-off",activate);      
             ev.currentTarget.children[0].children[0].innerText = acText + " OFF"; 
             this.props.setAC(this.ac); 
-            this.ac ="off";  
+            this.ac = "off";  
             return;
         }
     }
