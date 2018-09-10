@@ -5,7 +5,9 @@ Check out the [live demo](https://tesla-range-calculator.herokuapp.com/)
 ![](screenshot.png)
 
 ## Motivation
-I'd like to practice frond-end development realted skill espeacially react. So I decided to implement Tesla Range Calculator from [Tesla](https://www.tesla.com/en_AU/models) by using react and creat-react-app
+I'd like to practice frond-end development realted skill espeacially react. 
+So I decided to implement Tesla Range Calculator based on
+[Tesla](https://www.tesla.com/en_AU/models) by using react and creat-react-app
 
 ## Tech/framework used
 <b>Built with</b>
