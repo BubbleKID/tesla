@@ -15,6 +15,5 @@ I created React Tesla Range Calculator based on
 - [create-react-app](https://github.com/facebook/create-react-app)
 
 ## Features
-Range of different models are automatically update after user interact with the controller components:speed controller, temperature controller, ac/heat controller and wheelsize controller.
-
+The range of different models is automatically updated after the user interacts with the controller components: speed controller, temperature controller, ac/heat controller and wheel size controller.
 
