@@ -56,7 +56,6 @@ class TemperatureControl extends Component {
         this.tempIndex > 2 ? activate="climate-ac"  : activate="climate-heat";
         this.tempIndex > 2 ? acText="AC" : acText ="HEAT";
         acController.classList.remove("climate-on","climate-off","climate-ac","climate-heat");
-        //debugger;
         if(this.ac === "off"){
             acController.classList.add("climate-on",activate);
             ev.currentTarget.children[0].children[0].innerText = acText + " ON";  
@@ -95,11 +94,8 @@ class TemperatureControl extends Component {
                     </label>                    
                 </div>
             </div>   
-
         );
     }
 }
-
-
-    
+  
 export default  TemperatureControl;

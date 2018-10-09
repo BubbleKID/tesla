@@ -7,7 +7,6 @@ import model_p100d from '../data/metricP100DMiles.json';
 class BatteryRange extends Component {
     constructor(props) {
         super(props);   
-        //this.displayWheelSize = 19;
     }
 
     getStatus = (mph,temp,ac,wheels,model) => {     
@@ -35,7 +34,6 @@ class BatteryRange extends Component {
         var rangemodel_100d = this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_100d);
         var rangemodel_p100d = this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_p100d);
 
-        console.log( this.getStatus(this.props.speed,this.props.temp,this.props.ac,this.props.wheelsize,model_75d) );
         return (
             <div className="batterytype-ranges">
                 <div className="battery-option battery-option--75D" >
@@ -63,6 +61,5 @@ class BatteryRange extends Component {
          );
     }
 }
-
 
 export default BatteryRange;

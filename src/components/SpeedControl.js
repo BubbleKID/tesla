@@ -10,7 +10,6 @@ class SpeedControl extends Component {
     }
 
     changeSpeedIncrease() {     
-        //console.log(this.speedIndex);   
         if (this.speedIndex < 5 ){   
             this.speedIndex = this.speedIndex + 1;  
             this.displaySpeed = this.speedRange[this.speedIndex];  
@@ -45,7 +44,6 @@ class SpeedControl extends Component {
             </div>
         );
     }
-
 }
 
 export default  SpeedControl;
