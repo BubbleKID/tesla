@@ -88,11 +88,8 @@ class TemperatureControl extends Component {
                     </label>                    
                 </div>
             </div>   
-
         );
     }
 }
-
-
-    
+  
 export default  TemperatureControl;

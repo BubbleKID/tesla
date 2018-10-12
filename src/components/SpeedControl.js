@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 let speedIndex = 0; 
 const speedRange = [70,80,90,100,110,120];
-
 class SpeedControl extends Component {
     onSpeedIncrease = () => {   
         if ( speedIndex < 5 ){   
@@ -37,7 +35,6 @@ class SpeedControl extends Component {
             </div>
         );
     }
-
 }
 
 export default  SpeedControl;

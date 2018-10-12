@@ -3,7 +3,6 @@ import model_75d from '../data/metric75DMiles.json';
 import model_100d from '../data/metric100DMiles.json';
 import model_p100d from '../data/metricP100DMiles.json';
 
-
 class BatteryRange extends Component {
     getStatus = (mph,temp,ac,wheels,model) => {     
        let range;
