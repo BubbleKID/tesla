@@ -1,42 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
 import BatteryRange from './components/BatteryRange';
-
 import SpeedControl from './components/SpeedControl';
 import TemperatureControl from './components/TemperatureControl';
 import WheelSizeControl from './components/WheelSizeControl';
 class App extends Component {
-
     constructor(props) {
         super(props);
-        this.state = {          
+        this.state = {           
             ac: "off",
-            selectedWheel: 19,
             displaySpeed : 70,
             displayTemp : 10,
-            displayWheelSize : 19         
+            displayWheelSize : 19, 
+            tempIndex : 2  
         };
     }  
-
-    setSpeed(displaySpeed){
+    setSpeed = (displaySpeed) =>{
         this.setState({displaySpeed});      
     }
-
-    setTemp(displayTemp){
+    setTemp = (displayTemp) =>{
         this.setState({displayTemp});       
     }
-
-    setAC(ac){
+    setAC = (ac) =>{
         this.setState({ac});       
     }
-
-    setWheelSize(displayWheelSize){
+    setWheelSize = (displayWheelSize) =>{
         this.setState({displayWheelSize});       
     }
 
   render() {
-    
-    //console.log("speed: " + this.state.displaySpeed);
     return ( 
         <div className="main">
             <section className="section-container section-range-calculator hide-on-mobile">
@@ -54,16 +46,19 @@ class App extends Component {
                     temp={this.state.displayTemp} 
                     ac={this.state.ac}
                 />
-                    <div className="range-controls container">
-                        <SpeedControl  setSpeed = { displaySpeed =>this.setSpeed(displaySpeed) }/>
-                        <TemperatureControl setTemp = { displayTemp =>this.setTemp(displayTemp) }  setAC = { ac =>this.setAC(ac) } />
-                        <WheelSizeControl setWheelSize = { displayWheelSize =>this.setWheelSize(displayWheelSize) }  />
-                    </div>
-          
-
+                <div className="range-controls container">
+                    <SpeedControl 
+                        displaySpeed = { this.state.displaySpeed } 
+                        setSpeed = { this.setSpeed }
+                    />
+                    <TemperatureControl setTemp = { this.setTemp }  setAC = { this.setAC } ac = {this.state.ac} />
+                    <WheelSizeControl 
+                        displayWheelSize = { this.state.displayWheelSize } 
+                        setWheelSize = { this.setWheelSize }  
+                    />
+                </div>
             </div>  
             </section>
-
             <section className="section-disclaimer">
                 <div className="container">
                     <p>The actual amount of range that you experience will vary based on your particular use conditions. 
