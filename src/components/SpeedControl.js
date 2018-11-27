@@ -28,8 +28,8 @@ class SpeedControl extends Component {
                         <span className="spinner-unit">KMH</span>
                     </p>
                     <p className="spinner-controls">
-                        <button className="spinner-controls--increase" onClick={this.onSpeedIncrease }>Up</button>
-                        <button className="spinner-controls--decrease" onClick={this.onSpeedDecrease } >Down</button>
+                        <button className="spinner-controls--increase" onClick={ this.onSpeedIncrease }>Up</button>
+                        <button className="spinner-controls--decrease" onClick={ this.onSpeedDecrease } >Down</button>
                     </p>
                 </div>
             </div>

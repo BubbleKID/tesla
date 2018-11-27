@@ -4,13 +4,16 @@ import model_100d from '../data/metric100DMiles.json';
 import model_p100d from '../data/metricP100DMiles.json';
 
 class BatteryRange extends Component {
-    getStatus = (mph,temp,ac,wheels,model) => {     
+    getRange = (mph,temp,ac,wheels,model) => {     
        let range;
-       const currentStatus = model.filter(status=>status.temp === temp)
-        .filter(status=>status.wheelsize === wheels)
-        .filter(status=>status.ac === ac)
-        .filter(status=>status.windows === "up")
-        .filter(status=>status.lights === "off");
+       const currentStatus = model.filter(
+            status=>status.temp === temp 
+            && status.wheelsize === wheels 
+            && status.ac === ac
+            && status.windows === "up"
+            && status.lights === "off"
+        );
+        
         currentStatus.filter(
             status=>status.hwy.filter(
                 function(status){
@@ -25,9 +28,9 @@ class BatteryRange extends Component {
 
     render() {
         const { speed, temp, wheelsize, ac } = this.props;
-        const rangeModel_75d = this.getStatus(speed,temp,ac,wheelsize,model_75d);
-        const rangemodel_100d = this.getStatus(speed,temp,ac,wheelsize,model_100d);
-        const rangemodel_p100d = this.getStatus(speed,temp,ac,wheelsize,model_p100d);
+        const rangeModel_75d = this.getRange(speed,temp,ac,wheelsize,model_75d);
+        const rangemodel_100d = this.getRange(speed,temp,ac,wheelsize,model_100d);
+        const rangemodel_p100d = this.getRange(speed,temp,ac,wheelsize,model_p100d);
         return (
             <div className="batterytype-ranges">
                 <div className="battery-option battery-option--75D" >
@@ -57,3 +60,5 @@ class BatteryRange extends Component {
 }
 
 export default BatteryRange;
+
+

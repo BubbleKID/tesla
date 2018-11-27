@@ -1,0 +1,9 @@
+sudo: required
+dist: trusty
+language: node_js
+
+deploy:
+  provider: s3
+  access_key_id: "AKIAJAUTSDISZBU4RXUA"
+  secret_access_key: "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"
+  bucket: "tesla2"
