@@ -4,4 +4,6 @@ deploy:
   secret_access_key: "ct9nMnQ4d+fJZDronwnib9J41+OJlWf92bcv4qQX"
   bucket: "tesla2"
   skip_cleanup: true
+  region: "ap-southeast-2"
   acl: public_read
+  local_dir: build
