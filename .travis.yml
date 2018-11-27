@@ -1,17 +1,7 @@
-language: node_js
-node_js:
-  - "6.4.1"
 deploy:
-branches:
-  only:
-  - master
-before_script:
-  - npm install -g create-react-app
-script:
-  - npm run bulid
-  - aws s3 cp ./build/  s3://tesla2/ --recursive --acl public-read
-  
   provider: s3
   access_key_id: "AKIAJAUTSDISZBU4RXUA"
   secret_access_key: "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"
   bucket: "tesla2"
+  skip_cleanup: true
+  acl: public_read
