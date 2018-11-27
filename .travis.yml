@@ -3,6 +3,7 @@ node_js:
   - "iojs"
   - "7"
   before_script:
+  - npm install -g
   - npm install -g create-react-app
 deploy:
   provider: s3
